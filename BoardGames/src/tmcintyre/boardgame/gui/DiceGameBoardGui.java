@@ -7,6 +7,11 @@ import tmcintyre.boardgame.game.Game;
 import tmcintyre.boardgame.game.Move;
 import tmcintyre.boardgame.game.dicegames.DiceGame;
 
+/**
+ * A graphical representation of a {@link DiceGame}
+ * @author Tom McIntyre
+ *
+ */
 public class DiceGameBoardGui extends AbstractBoardGui {
 
   private static final long serialVersionUID = 1L;

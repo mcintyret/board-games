@@ -1,6 +1,5 @@
 package tmcintyre.boardgame.gui;
 
-
 import java.awt.EventQueue;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -19,14 +18,24 @@ import javax.swing.WindowConstants;
 
 import tmcintyre.boardgame.game.dicegames.Dice;
 
+/**
+ * A graphical representation of a {@link Dice} object.
+ * 
+ * <p>
+ * The score for each die represented by the underlying <code>Dice</code> object
+ * is shown on a separate <code>DicePanel</code>.
+ * 
+ * @author Tom McIntyre
+ * 
+ */
 public class DiceFrame extends JFrame {
   private static final long serialVersionUID = 1L;
 
-  private static final Image[] diceImages = new BufferedImage[6];
+  private static final Image[] diceImages = new BufferedImage[7];
   static {
     for (int i = 0; i < diceImages.length; i++) {
       try {
-        diceImages[i] = ImageIO.read(new File("./files/dice_" + (i + 1) + ".png"));
+        diceImages[i] = ImageIO.read(new File("./files/dice_" + i  + ".png"));
       } catch (IOException e) {
         e.printStackTrace();
       }
@@ -42,33 +51,28 @@ public class DiceFrame extends JFrame {
     this.dice = dice;
     this.guiBoard = guiBoard;
     dicePanels = new DicePanel[dice.getNumDice()];
-    initialise();
+    initialize();
     launch();
   }
 
-  public void updateOnDiceRoll() {
-    int[] diceScores = dice.getScores();
-    for (int i = 0; i < diceScores.length; i++) {
-      dicePanels[i].score = diceScores[i];
-    }
-    repaint();
-  }
-
-  private void initialise() {
+  private void initialize() {
     setBounds(100, 100, 100 * dice.getNumDice(), 150);
     getContentPane().setLayout(new GridLayout(1, dice.getNumDice()));
     setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-    for (int i = 0; i < dicePanels.length; i++) {
-      dicePanels[i] = new DicePanel();
-      getContentPane().add(dicePanels[i]);
-    }
-    addMouseListener(new MouseAdapter() {
 
+    // Initializing the dice panels
+    for (int i = 0; i < dicePanels.length; i++) {
+      getContentPane().add(new DicePanel(i));
+    }
+
+    // Double-clicking on the DiceFrame tells the DiceGameBoardGui object that
+    // the user requested to roll the dice.
+    addMouseListener(new MouseAdapter() {
       @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
           guiBoard.diceRollRequested();
-          updateOnDiceRoll();
+          repaint();
         }
       }
     });
@@ -88,16 +92,27 @@ public class DiceFrame extends JFrame {
     });
   }
 
-  private static class DicePanel extends JPanel {
+  /**
+   * Displays an image of a die face corresponding to the score of the die.
+   * 
+   * @author Tom McIntyre
+   * 
+   */
+  private class DicePanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
-    private int score = 1;
+    private final int index;
+
+    public DicePanel(int index) {
+      this.index = index;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
       Graphics2D g2 = (Graphics2D) g;
+      int score = dice.getScores()[index];
 
-      g2.drawImage(diceImages[score - 1], 0, 0, getWidth(), getHeight(), null);
+      g2.drawImage(diceImages[score], 0, 0, getWidth(), getHeight(), null);
     }
 
   }

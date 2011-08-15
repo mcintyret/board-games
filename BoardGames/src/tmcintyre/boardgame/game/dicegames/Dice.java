@@ -15,6 +15,23 @@ import java.util.Random;
  * @author Tom McIntyre
  * 
  */
+
+// TODO: it may be conceptually confusing to have a single Dice object
+// representing one or more dice. Maybe this should be adjusted to a simpler
+// 'Die' class. A game could then have one or more Die objects as needed.
+//
+// The advantage of this approach is that it would give more control in games
+// where dice can be rolled individually - although in this case the game could
+// have
+// several of the current Dice objects, each representing a single die.
+//
+// A disadvantage is that it may require a more complex set of interfaces to
+// interact with varying number of Die objects, eg in the Gui displays.
+//
+// A further alternative would be to add methods to this class that allows
+// manipulation of individual scores (corresponding to individual die) so that a
+// single Dice object could support most functions.
+
 public class Dice {
 
   private static final int DEFAULT_FACES = 6;
