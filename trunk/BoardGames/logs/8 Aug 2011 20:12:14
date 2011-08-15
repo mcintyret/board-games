@@ -1,0 +1,9 @@
+Game started
+Player 0 PAWN moved from 6, 3 to 4, 3
+Player 1 PAWN moved from 1, 4 to 3, 4
+Player 0 PAWN moved from 4, 3 to 3, 4, taking Player 1's PAWN
+Player 1 PAWN moved from 1, 3 to 2, 3
+Player 0 PAWN moved from 3, 4 to 2, 3, taking Player 1's PAWN
+Player 1 BISHOP moved from 0, 5 to 2, 3, taking Player 0's PAWN
+Player 0 PAWN moved from 6, 4 to 5, 4
+Player 1 QUEEN moved from 0, 3 to 3, 6

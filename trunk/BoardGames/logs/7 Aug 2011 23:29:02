@@ -1,0 +1,10 @@
+Game started
+WHITE PAWN moved from 6, 3 to 4, 3
+BLACK PAWN moved from 1, 4 to 3, 4
+WHITE PAWN moved from 4, 3 to 3, 4, taking BLACK PAWN
+BLACK PAWN moved from 1, 3 to 2, 3
+WHITE PAWN moved from 3, 4 to 2, 3, taking BLACK PAWN
+BLACK QUEEN moved from 0, 3 to 2, 3, taking WHITE PAWN
+WHITE QUEEN moved from 7, 3 to 2, 3, taking BLACK QUEEN
+BLACK BISHOP moved from 0, 5 to 2, 3, taking WHITE QUEEN
+WHITE PAWN moved from 6, 1 to 5, 1

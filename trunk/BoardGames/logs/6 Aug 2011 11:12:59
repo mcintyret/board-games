@@ -1,0 +1,47 @@
+Game started
+WHITE BASE_CHECKER moved from 5, 4 to 4, 3
+BLACK BASE_CHECKER moved from 2, 3 to 3, 2
+WHITE BASE_CHECKER moved from 5, 2 to 4, 1
+BLACK BASE_CHECKER moved from 2, 5 to 3, 4
+WHITE BASE_CHECKER moved from 4, 1 to 2, 3, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 2, 1 to 3, 2
+WHITE BASE_CHECKER moved from 4, 3 to 2, 1, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 1, 0 to 3, 2, taking WHITE BASE_CHECKER
+WHITE BASE_CHECKER moved from 6, 3 to 5, 2
+BLACK BASE_CHECKER moved from 1, 6 to 2, 5
+WHITE BASE_CHECKER moved from 6, 5 to 5, 4
+BLACK BASE_CHECKER moved from 1, 2 to 2, 1
+WHITE BASE_CHECKER moved from 5, 2 to 4, 3
+BLACK BASE_CHECKER moved from 3, 4 to 5, 2, taking WHITE BASE_CHECKER
+WHITE BASE_CHECKER moved from 6, 1 to 4, 3, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 0, 3 to 1, 2
+WHITE BASE_CHECKER moved from 7, 6 to 6, 5
+BLACK BASE_CHECKER moved from 1, 2 to 3, 4, taking WHITE BASE_CHECKER
+BLACK BASE_CHECKER moved from 3, 4 to 5, 2, taking WHITE BASE_CHECKER
+WHITE BASE_CHECKER moved from 7, 0 to 6, 1
+BLACK BASE_CHECKER moved from 5, 2 to 7, 0, taking WHITE BASE_CHECKER
+BLACK BASE_CHECKER at 7, 0 was promoted to CROWNED_CHECKER
+WHITE BASE_CHECKER moved from 5, 6 to 4, 5
+BLACK BASE_CHECKER moved from 2, 5 to 3, 4
+WHITE BASE_CHECKER moved from 4, 5 to 2, 3, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 0, 5 to 1, 6
+WHITE BASE_CHECKER moved from 2, 3 to 0, 5, taking BLACK BASE_CHECKER
+WHITE BASE_CHECKER at 0, 5 was promoted to CROWNED_CHECKER
+BLACK BASE_CHECKER moved from 3, 2 to 4, 1
+WHITE BASE_CHECKER moved from 5, 0 to 3, 2, taking BLACK BASE_CHECKER
+WHITE BASE_CHECKER moved from 3, 2 to 1, 0, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 0, 1 to 1, 2
+WHITE BASE_CHECKER moved from 1, 0 to 0, 1
+WHITE BASE_CHECKER at 0, 1 was promoted to CROWNED_CHECKER
+BLACK CROWNED_CHECKER moved from 7, 0 to 6, 1
+WHITE BASE_CHECKER moved from 7, 2 to 5, 0, taking BLACK CROWNED_CHECKER
+BLACK BASE_CHECKER moved from 2, 7 to 3, 6
+WHITE CROWNED_CHECKER moved from 0, 5 to 2, 7, taking BLACK BASE_CHECKER
+WHITE CROWNED_CHECKER moved from 2, 7 to 4, 5, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 0, 7 to 1, 6
+WHITE CROWNED_CHECKER moved from 0, 1 to 2, 3, taking BLACK BASE_CHECKER
+BLACK BASE_CHECKER moved from 1, 6 to 2, 5
+WHITE CROWNED_CHECKER moved from 2, 3 to 3, 4
+BLACK BASE_CHECKER moved from 2, 5 to 3, 6
+WHITE CROWNED_CHECKER moved from 4, 5 to 2, 7, taking BLACK BASE_CHECKER
+Player 1 won the game
