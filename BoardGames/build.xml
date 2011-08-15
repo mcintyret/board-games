@@ -5,8 +5,8 @@
 	<property name="sourcedir" value="./bin" />
 	<property name="filesdir" value="./files" />
 	<property name="lib" value="lib" />
-	<property name="mainClass" value="runner.Runner" />
-	<property name="newJar" value="Chess.jar" />
+	<property name="mainClass" value="tmcintyre.boardgame.runner.GameRunner" />
+	<property name="newJar" value="BoardGames.jar" />
 
 	<target name="makeJar">
 		<jar destfile="${newJar}">
