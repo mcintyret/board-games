@@ -1,12 +1,10 @@
 package tmcintyre.boardgame.gui;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
-import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.HashMap;
@@ -42,9 +40,26 @@ import tmcintyre.boardgame.player.Player;
  * Contains several methods to update the game state in response to
  * user-generated events
  * 
+ * <p>
+ * Note that the <code>getGame</code> method is not abstract and that there is
+ * no <code>Game</code> object field. This forces subclasses to implement their
+ * own <code>getGame</code> method and provide their own <code>Game</code>
+ * object. This allows subclasses to have as a member a more specific
+ * implementation of <code>Game</code>, giving access to methods specific to
+ * that game type.
+ * 
  * @author Tom McIntyre
  * 
  */
+
+// TODO: Change the structure of the BoardGui class tree to mirror that of the
+// Game class tree.
+// The key point is to make interfaces for BoardGui that are equivalent to those
+// for Game. The Game system uses interfaces so that it is possible to have a
+// Game that implements PromotionGame, a Game that implements DiceGame, and a
+// Game that implements both. Because the BoardGui system so far just uses class
+// inheritance, this mixing of properties is not possible at the moment.
+
 public abstract class AbstractBoardGui extends JPanel implements Observer {
   private static final long serialVersionUID = 1L;
 
@@ -58,7 +73,7 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
   private boolean showAvailableMoves = true;
   private Piece selectedPiece;
 
-  private Square[] squares;
+  private Square[][] squares;
 
   protected void initialise() {
     setLayout(new GridLayout(getGame().getBoardHeight(), getGame().getBoardWidth()));
@@ -66,6 +81,13 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
     initialiseSquares();
   }
 
+  /**
+   * Returns the <code>Game</code> object associated with this
+   * <code>BoardGUI</code>.
+   * 
+   * @return the <code>Game</code> object associated with this
+   *         <code>BoardGUI</code>
+   */
   public abstract Game getGame();
 
   @Override
@@ -123,7 +145,7 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
     if (options == null) return;
 
     Map<String, String> selectedOptions = new HashMap<String, String>();
-    for (Map.Entry<String, String[]> entry: options.entrySet()) {
+    for (Map.Entry<String, String[]> entry : options.entrySet()) {
       String key = entry.getKey();
       String[] choices = entry.getValue();
       String response;
@@ -139,6 +161,13 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
     getGame().implementSelectedOptions(selectedOptions);
   }
 
+  /**
+   * Toggles the value of the boolean field <code>showAvailableMoves</code>.
+   * 
+   * <p>
+   * If <code>showAvailableMoves</code> is <tt>true</tt>, the available moves
+   * for the currently selected piece will be highlighted in red.
+   */
   public void toggleShowAvailableMoves() {
     showAvailableMoves = !showAvailableMoves;
   }
@@ -153,9 +182,19 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
     }
   }
 
+  /**
+   * Calls all the <code>Square</code> objects to update the list of
+   * <code>Piece</code>s they hold.
+   */
+  // TODO: consider having each square do this as part of its repaint method.
+  // This method could then be completely removed. This would make the squares
+  // essentially autonomous. The downside is all the unnecessary calls to
+  // Game.getPiecesAt() when no change to the board has taken place.
   protected void updateOnBoardChanged() {
-    for (Square square : squares) {
-      square.updatePiecesHeld();
+    for (Square[] squareRow : squares) {
+      for (Square square : squareRow) {
+        square.updatePiecesHeld();
+      }
     }
     legalMoves.clear();
   }
@@ -163,16 +202,17 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
   private void updateLegalMoveSquaresForSelectedPiece() {
     legalMoves.clear();
     for (Move move : selectedPiece.getLegalMoves()) {
-      int squareIndex = getGame().getBoardHeight() * move.destRow() + move.destCol();
-      legalMoves.put(squares[squareIndex], move);
+      legalMoves.put(squares[move.destRow()][move.destCol()], move);
     }
   }
 
   private void initialiseSquares() {
-    squares = new Square[getGame().getBoardHeight() * getGame().getBoardWidth()];
-    for (int i = 0; i < squares.length; i++) {
-      squares[i] = new Square(i);
-      add(squares[i]);
+    squares = new Square[getGame().getBoardHeight()][getGame().getBoardWidth()];
+    for (int row = 0; row < squares.length; row++) {
+      for (int col = 0; col < squares[row].length; col++) {
+        squares[row][col] = new Square(row, col);
+        add(squares[row][col]);
+      }
     }
   }
 
@@ -208,7 +248,7 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
 
     private void doSelection() {
       if (square.pieces == null) return;
-      // note that this assumes that pieces belonging to the same player will
+      // Note that this assumes that pieces belonging to the same player will
       // not be on the same position on the board
       for (Piece piece : square.pieces) {
         if (piece.getPlayer() == getGame().getCurrentPlayer()) {
@@ -226,7 +266,7 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
    * game board.
    * 
    * <p>
-   * Whenever the Gui is updated the square updates its list of {@link Piece}s
+   * Whenever the GUI is updated the square updates its list of {@link Piece}s
    * to match those of its game board square.
    * 
    * @author Tom McIntyre
@@ -236,40 +276,25 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
     private static final long serialVersionUID = 1L;
 
     private final List<Piece> pieces = new LinkedList<Piece>();
-    private final int index;
+    private final int row;
+    private final int col;
 
-    public Square(int index) {
-      this.index = index;
+    public Square(int row, int col) {
+      this.row = row;
+      this.col = col;
       addMouseListener(new BoardMouseListener(this));
     }
 
     private void updatePiecesHeld() {
       pieces.clear();
-      pieces.addAll(getPiecesFromBoard());
-    }
-
-    private Point getPointFromSquareIndex() {
-      Point p = new Point();
-      p.x = index / getGame().getBoardWidth();
-      p.y = index % getGame().getBoardWidth();
-      return p;
-    }
-
-    private List<Piece> getPiecesFromBoard() {
-      Point p = getPointFromSquareIndex();
-      return getGame().getPiecesAt(p.x, p.y);
-    }
-
-    private Color getColorFromBoard() {
-      Point p = getPointFromSquareIndex();
-      return getGame().getBoardColorAt(p.x, p.y);
+      pieces.addAll(getGame().getPiecesAt(row, col));
     }
 
     @Override
     public void paintComponent(Graphics g) {
       Graphics2D g2 = (Graphics2D) g;
 
-      setBackground(getColorFromBoard());
+      setBackground(getGame().getBoardColorAt(row, col));
       super.paintComponent(g2);
 
       boolean hasSelectedPiece = false;
@@ -311,6 +336,32 @@ public abstract class AbstractBoardGui extends JPanel implements Observer {
       // characters.
       g2.setFont(new Font("Quivira", Font.PLAIN, size));
       g2.drawString(string, 0, getHeight());
+    }
+
+    @Override
+    public int hashCode() {
+      // Automatically generated hashcode function
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + col;
+      result = prime * result + ((pieces == null) ? 0 : pieces.hashCode());
+      result = prime * result + row;
+      return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      // Automatically generated equals function
+      if (this == obj) return true;
+      if (obj == null) return false;
+      if (getClass() != obj.getClass()) return false;
+      Square other = (Square) obj;
+      if (col != other.col) return false;
+      if (row != other.row) return false;
+      if (pieces == null) {
+        if (other.pieces != null) return false;
+      } else if (!pieces.equals(other.pieces)) return false;
+      return true;
     }
   }
 
