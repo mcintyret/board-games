@@ -1,0 +1,38 @@
+Game started
+Player 1 BASE_CHECKER moved from 5, 4 to 4, 3
+player.Player@408fbecf's turn
+Player 2 BASE_CHECKER moved from 2, 3 to 3, 2
+player.Player@4c309f9f's turn
+Player 1 BASE_CHECKER moved from 5, 6 to 4, 5
+player.Player@408fbecf's turn
+Player 2 BASE_CHECKER moved from 2, 5 to 3, 6
+player.Player@4c309f9f's turn
+Player 1 BASE_CHECKER moved from 6, 7 to 5, 6
+player.Player@408fbecf's turn
+Player 2 BASE_CHECKER moved from 1, 6 to 2, 5
+player.Player@4c309f9f's turn
+Player 1 BASE_CHECKER moved from 7, 6 to 6, 7
+player.Player@408fbecf's turn
+Player 2 BASE_CHECKER moved from 3, 2 to 5, 4, taking Player 1's BASE_CHECKER
+Player 2 BASE_CHECKER moved from 5, 4 to 7, 6, taking Player 1's BASE_CHECKER
+java.awt.Color[r=250,g=82,b=132] BASE_CHECKER promoted to CROWNED_CHECKER
+player.Player@4c309f9f's turn
+move undone
+move undone
+player.Player@4c309f9f's turn
+move undone
+player.Player@4c309f9f's turn
+move undone
+player.Player@408fbecf's turn
+move undone
+player.Player@4c309f9f's turn
+Player 1 BASE_CHECKER moved from 5, 6 to 4, 7
+player.Player@408fbecf's turn
+move undone
+player.Player@4c309f9f's turn
+move undone
+player.Player@408fbecf's turn
+move undone
+player.Player@4c309f9f's turn
+move undone
+player.Player@408fbecf's turn

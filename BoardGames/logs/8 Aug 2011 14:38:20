@@ -1,0 +1,30 @@
+Game started
+Player 1 PAWN moved from 6, 3 to 4, 3
+Player 1 PAWN moved from 6, 4 to 4, 4
+move undone
+move undone
+Player 1 PAWN moved from 4, 3 to 3, 3
+Player 1 PAWN moved from 6, 4 to 4, 4
+Player 2 PAWN moved from 1, 2 to 3, 2
+Player 1 QUEEN moved from 7, 3 to 5, 5
+Player 2 PAWN moved from 1, 4 to 2, 4
+Player 1 BISHOP moved from 7, 2 to 5, 4
+Player 2 PAWN moved from 1, 5 to 2, 5
+Player 1 PAWN moved from 6, 2 to 5, 2
+Player 2 PAWN moved from 1, 7 to 2, 7
+Player 1 KNIGHT moved from 7, 1 to 5, 0
+Player 2 BISHOP moved from 0, 5 to 1, 4
+java.awt.Color[r=255,g=255,b=255] castled to the left
+null
+Player 2 KING moved from 0, 4 to 0, 5
+Player 1 KNIGHT moved from 7, 6 to 5, 7
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<project name="test" default="makeJar" basedir=".">
+
+	<property name="basedir" value="." />
+	<property name="sourcedir" value="./bin" />
+	<property name="filesdir" value="./files" />
+	<property name="lib" value="lib" />
+	<property name="mainClass" value="runner.Runner" />
+	<property name="newJar" value="Chess.jar" />
+
+	<target name="makeJar">
+		<jar destfile="${newJar}">
+			<fileset dir="${sourcedir}" />
+			<fileset dir="${filesdir}"/>
+			<manifest>
+				<attribute name="Main-Class" value="${mainClass}" />
+			</manifest>
+		</jar>
+	</target>
+</project>
+

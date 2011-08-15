@@ -1,0 +1,49 @@
+Game started
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 1 to 4, 1
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 1, 6 to 3, 6
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 4, 1 to 3, 1
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 3, 6 to 4, 6
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 3, 1 to 2, 1
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 4, 6 to 5, 6
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 2, 1 to 1, 0, taking java.awt.Color[r=0,g=0,b=0] PAWN
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 5, 6 to 6, 7, taking java.awt.Color[r=255,g=255,b=255] PAWN
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 1, 0 to 0, 1, taking java.awt.Color[r=0,g=0,b=0] KNIGHT
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 1, 0 to 0, 1, taking java.awt.Color[r=0,g=0,b=0] KNIGHT
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 6, 7 to 7, 6, taking java.awt.Color[r=255,g=255,b=255] KNIGHT
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 6, 7 to 7, 6, taking java.awt.Color[r=255,g=255,b=255] KNIGHT
+java.awt.Color[r=255,g=255,b=255] BISHOP moved from 0, 1 to 1, 2, taking java.awt.Color[r=0,g=0,b=0] PAWN
+java.awt.Color[r=0,g=0,b=0] QUEEN moved from 7, 6 to 7, 7, taking java.awt.Color[r=255,g=255,b=255] ROOK
+java.awt.Color[r=255,g=255,b=255] BISHOP moved from 1, 2 to 0, 3, taking java.awt.Color[r=0,g=0,b=0] QUEEN
+java.awt.Color[r=0,g=0,b=0] QUEEN moved from 7, 7 to 6, 6, taking java.awt.Color[r=255,g=255,b=255] PAWN
+java.awt.Color[r=255,g=255,b=255] BISHOP moved from 7, 5 to 6, 6, taking java.awt.Color[r=0,g=0,b=0] QUEEN
+java.awt.Color[r=0,g=0,b=0] KING moved from 0, 4 to 0, 3, taking java.awt.Color[r=255,g=255,b=255] BISHOP
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+move undone
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 1 to 5, 1
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 1, 1 to 2, 1
+java.awt.Color[r=255,g=255,b=255] KNIGHT moved from 7, 1 to 5, 0
+java.awt.Color[r=0,g=0,b=0] KNIGHT moved from 0, 1 to 2, 0
+java.awt.Color[r=255,g=255,b=255] BISHOP moved from 7, 2 to 6, 1
+java.awt.Color[r=0,g=0,b=0] ROOK moved from 0, 0 to 0, 1, taking java.awt.Color[r=255,g=255,b=255] BISHOP
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 3 to 5, 3
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 1, 2 to 2, 2
+java.awt.Color[r=255,g=255,b=255] QUEEN moved from 7, 3 to 6, 3
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 1, 4 to 2, 4
+java.awt.Color[r=255,g=255,b=255] castled to the left
+java.awt.Color[r=255,g=255,b=255] castled to the left

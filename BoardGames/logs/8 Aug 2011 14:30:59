@@ -1,0 +1,11 @@
+Game started
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 3 to 4, 3
+Player 1 won the game
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 4 to 4, 4
+Player 2 won the game
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 1, 4 to 3, 4
+Player 1 won the game
+java.awt.Color[r=255,g=255,b=255] PAWN moved from 6, 5 to 4, 5
+Player 2 won the game
+java.awt.Color[r=0,g=0,b=0] PAWN moved from 3, 4 to 4, 5, taking java.awt.Color[r=255,g=255,b=255] PAWN
+Player 1 won the game
